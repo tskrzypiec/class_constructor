@@ -2,10 +2,10 @@
 // Created by Tomasz on 16.01.2018.
 //
 
-#ifndef PROSTOKAT_PROSTOKAT_H
-#define PROSTOKAT_PROSTOKAT_H
+//#ifndef PROSTOKAT_PROSTOKAT_H
+//#define PROSTOKAT_PROSTOKAT_H
 
-#endif //PROSTOKAT_PROSTOKAT_H
+//#endif //PROSTOKAT_PROSTOKAT_H
 
 #include <iostream>
 
@@ -19,8 +19,12 @@ class Rectangle {
 
 public:
 
-    Rectangle(int=0,int=0);
+    Rectangle(const Rectangle &kopiaRectangle);
+
+    Rectangle(int,int); // na sztywno tu mozna przypisac int = np. 2
+
     ~Rectangle();
-    void load(); //wczytuje dane boków
+
+    void load(); // wczytuje dane boków
     void calculate();
 };
