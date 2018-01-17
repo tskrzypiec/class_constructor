@@ -11,7 +11,7 @@ void Rectangle::load() {
 
     cout << "Podaj wymiary boku 1" << endl;
     cin >> side_1;
-    cout << "Podaj wymiatry boku 2" << endl;
+    cout << "Podaj wymiary boku 2" << endl;
     cin >> side_2;
 
 }
@@ -24,14 +24,27 @@ void Rectangle::calculate() {
 
 }
 
-Rectangle::Rectangle(int a, int b) {
+/*Rectangle::Rectangle(int side_1, int side_2) : side_1(side_1),side_2(side_2) // lista inicjalizacyjna stosujemy, kiedy argumenty maja
+                                                                            // taka sama nazwa jak pola obiektów
+{
 
-    side_1=a;
-    side_2=b;
+}  */
 
+Rectangle::Rectangle(const Rectangle &kopiaRectangle) {
+    side_1 = kopiaRectangle.side_1;
+    side_2 = kopiaRectangle.side_2;
+    cout << "konstruktor kopiujacy\n";
 }
+
+ Rectangle::Rectangle(int side_1, int side_2) // można też tak
+ {
+    this ->side_1=side_1;
+    this->side_2=side_2;
+ }
+
 
 Rectangle::~Rectangle() {
 
-   // cout<<"Destruktor :)"<<endl;
+    cout<<"Destruktor :)"<<endl;
 }
+
